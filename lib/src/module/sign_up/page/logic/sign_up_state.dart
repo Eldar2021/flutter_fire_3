@@ -8,11 +8,19 @@ class SignUpInitial extends SignUpState {
 }
 
 class SignUpSuccess extends SignUpState {
+  SignUpSuccess(this.user);
+
+  final UserCredential user;
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [user];
 }
 
 class SignUpError extends SignUpState {
+  SignUpError(this.exception);
+
+  final Exception exception;
+
   @override
   List<Object?> get props => [];
 }
