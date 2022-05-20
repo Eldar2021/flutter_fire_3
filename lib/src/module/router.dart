@@ -21,10 +21,10 @@ class AppRouter {
           builder: (_) => const SignUpPage(),
         );
 
-      // case signIn:
-      // return MaterialPageRoute<signIn>(
-      //   builder: (_) => const SignIn(),
-      // );
+      case signIn:
+        return MaterialPageRoute<SignInPage>(
+          builder: (_) => const SignInPage(),
+        );
 
       default:
         throw RouteExc();
