@@ -11,9 +11,10 @@ abstract class SignUpRepoSitory {
 }
 
 class SignUpRepoImpl implements SignUpRepoSitory {
-  SignUpRepoImpl(this.fAuth);
+  SignUpRepoImpl(this.fAuth, {required this.hiveService});
 
   final FirebaseAuth fAuth;
+  final HiveService hiveService;
 
   @override
   Future<Either<Exception, UserCredential>> signUpEmail({
@@ -24,6 +25,11 @@ class SignUpRepoImpl implements SignUpRepoSitory {
       final res = await fAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
+      );
+      hiveService.save<String>(
+        boxName: userUidBox,
+        key: userUidKey,
+        value: res.user?.uid ?? '',
       );
       return Right(res);
     } catch (e) {

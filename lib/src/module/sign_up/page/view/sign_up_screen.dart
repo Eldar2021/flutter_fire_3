@@ -41,37 +41,34 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
-  BlocListener<SignUpCubit, SignUpState> _logic(BuildContext context) {
-    return BlocListener<SignUpCubit, SignUpState>(
-      listenWhen: (previous, current) => true,
-      listener: (context, state) {
-        if (state is SignUpSuccess) {
-          Navigator.pushAndRemoveUntil<HomePage>(
-            context,
-            MaterialPageRoute(
-              builder: (BuildContext context) => const HomePage(),
-            ),
-            (route) => false,
-          );
-        } else if (state is SignUpError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.exception.toString()),
-            ),
-          );
+  ElevatedButton _logic(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () async {
+        if (_key.currentState!.validate()) {
+          final state = await context.read<SignUpCubit>().signUpEmail(
+                email: _email.text,
+                pass: _password.text,
+              );
+          if (state is SignUpSuccess) {
+            // ignore: use_build_context_synchronously
+            await Navigator.pushAndRemoveUntil<HomePage>(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => const HomePage(),
+              ),
+              (route) => false,
+            );
+          } else if (state is SignUpError) {
+            // ignore: use_build_context_synchronously
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(state.exception.toString()),
+              ),
+            );
+          }
         }
       },
-      child: ElevatedButton(
-        onPressed: () {
-          if (_key.currentState!.validate()) {
-            context.read<SignUpCubit>().signUpEmail(
-                  email: _email.text,
-                  pass: _password.text,
-                );
-          }
-        },
-        child: const Text('Sign Up'),
-      ),
+      child: const Text('Sign Up'),
     );
   }
 }

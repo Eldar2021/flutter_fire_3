@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../src.dart';
-import '../../setting/view/setting_view.dart';
-
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -29,11 +27,11 @@ class HomeView extends StatelessWidget {
         onPageChanged: (val) => transion(val, context),
         physics: const NeverScrollableScrollPhysics(),
         controller: controller,
-        children: const [
-          SignUpPage(),
-          HomeScreen(),
-          SignUpPage(),
-          SettingView(),
+        children: [
+          Container(color: Colors.amberAccent),
+          Container(color: Colors.blueGrey),
+          Container(color: Colors.red),
+          Container(color: Colors.green),
         ],
       ),
       bottomNavigationBar: BlocBuilder<HomeCubit, int>(

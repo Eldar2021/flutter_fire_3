@@ -74,6 +74,14 @@ class CustomTheme {
     );
   }
 
+  ElevatedButtonThemeData elevatedButtonThemeData(ColorScheme colors) {
+    return ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(colors.onTertiary),
+      ),
+    );
+  }
+
   InputDecorationTheme inputDecorationTheme(ColorScheme colors) {
     return InputDecorationTheme(
       border: OutlineInputBorder(
@@ -158,6 +166,7 @@ class CustomTheme {
       drawerTheme: drawerTheme(scheme),
       buttonTheme: buttonTheme(scheme),
       inputDecorationTheme: inputDecorationTheme(scheme),
+      elevatedButtonTheme: elevatedButtonThemeData(scheme),
       // scaffoldBackgroundColor: scheme.background,
       useMaterial3: true,
     );
@@ -178,6 +187,7 @@ class CustomTheme {
       drawerTheme: drawerTheme(scheme),
       buttonTheme: buttonTheme(scheme),
       inputDecorationTheme: inputDecorationTheme(scheme),
+      elevatedButtonTheme: elevatedButtonThemeData(scheme),
       // scaffoldBackgroundColor: scheme.background,
       useMaterial3: true,
     );

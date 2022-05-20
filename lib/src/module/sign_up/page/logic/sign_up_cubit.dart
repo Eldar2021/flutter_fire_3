@@ -11,14 +11,16 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   final SignUpRepoSitory repo;
 
-  Future<void> signUpEmail({
+  Future<SignUpState> signUpEmail({
     required String email,
     required String pass,
   }) async {
     final res = await repo.signUpEmail(email: email, password: pass);
-    // print(res);
 
-    res.fold((l) => emit(SignUpError(l)), (r) => emit(SignUpSuccess(r)));
-    // print(state);
+    res.fold(
+      (l) => emit(SignUpError(l)),
+      (r) => emit(SignUpSuccess(r)),
+    );
+    return state;
   }
 }
