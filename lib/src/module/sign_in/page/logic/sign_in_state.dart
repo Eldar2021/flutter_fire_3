@@ -8,11 +8,19 @@ class SignInInitial extends SignInState {
 }
 
 class SignInSuccess extends SignInState {
+  SignInSuccess(this.user);
+
+  final UserCredential user;
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [user];
 }
 
 class SignInError extends SignInState {
+  SignInError(this.exception);
+
+  final Exception exception;
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [exception];
 }

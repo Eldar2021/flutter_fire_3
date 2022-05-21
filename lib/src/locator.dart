@@ -14,7 +14,9 @@ void setup() {
     ..registerFactory<SignUpRepoSitory>(
       () => SignUpRepoImpl(sl<FirebaseAuth>(), hiveService: sl<HiveService>()),
     )
-    ..registerFactory(
-      () => SignUpCubit(sl<SignUpRepoSitory>()),
-    );
+    ..registerFactory<SignUpCubit>(() => SignUpCubit(sl<SignUpRepoSitory>()))
+    ..registerFactory<SignInRepository>(
+      () => SignInRepoImpl(sl<FirebaseAuth>(), hiveService: sl<HiveService>()),
+    )
+    ..registerFactory<SignInCubit>(() => SignInCubit(sl<SignInRepository>()));
 }

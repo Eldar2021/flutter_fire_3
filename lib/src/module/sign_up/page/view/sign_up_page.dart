@@ -10,7 +10,7 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => sl<SignUpCubit>(),
-      child: SignUpScreen(),
+      child: SignInView(),
     );
   }
 }
