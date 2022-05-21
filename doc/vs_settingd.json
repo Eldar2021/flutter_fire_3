@@ -1,0 +1,62 @@
+{
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.autoReveal": false,
+    "explorer.fileNesting.patterns": {
+        "pubspec.yaml": ".flutter-plugins, .packages, .dart_tool, .flutter-plugins-dependencies, .metadata, .packages, pubspec.lock, build.yaml, analysis_options.yaml, all_lint_rules.yaml",
+        ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
+        "readme.*": "authors, backers.md, changelog*, citation*, code_of_conduct.md, codeowners, contributing.md, contributors, copying, credits, governance.md, history.md, license*, maintainers, readme*, security.md, sponsors.md",
+        "*.dart": "$(capture).g.dart, $(capture).freezed.dart"
+    },
+    "[dart]": {
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false,
+        "editor.defaultFormatter": "Dart-Code.dart-code",
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.guides.bracketPairs": "active"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDelete": false,
+    "dart.debugExternalPackageLibraries": true,
+    "dart.debugSdkLibraries": true,
+    "dart.analyzerSshHost": null,
+    "editor.suggestSelection": "first",
+    // "vsintellicode.modify.editor.suggestSelection": "enabled",
+    "editor.detectIndentation": false,
+    "workbench.colorCustomizations": {
+        "[Default Dark+]": {
+            "tab.activeBorderTop": "#edf812",
+            "activityBar.background": "#000000",
+            "activityBar.border": "#0331a7",
+            "activityBarBadge.background": "#0331a7",
+            "editor.background": "#000000",
+            "sideBar.background": "#0c0c0c",
+            // "sideBar.border": "#0517b8",
+            "tab.unfocusedActiveBackground": "#0a0b10",
+            "tab.inactiveBackground": "#101011",
+            "panel.background": "#000000",
+            "statusBar.background": "#ff000049",
+            "titleBar.activeBackground": "#000000",
+            // "banner.background": "#f00303",
+            "editorGroupHeader.tabsBackground": "#000000",
+            "editor.lineHighlightBackground": "#202a56",
+            "editorWidget.border": "#ffd502",
+            "editorWidget.background": "#000000",
+            "editorIndentGuide.background": "#ffffff0f"
+        }
+    },
+    "dart.lineLength": 100,
+    // "editor.formatOnSave": true,
+    // "editor.formatOnType": true,
+    "window.zoomLevel": 1,
+    "extensions.autoUpdate": true
+}
