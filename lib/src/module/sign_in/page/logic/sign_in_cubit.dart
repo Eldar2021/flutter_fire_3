@@ -19,7 +19,7 @@ class SignInCubit extends Cubit<SignInState> {
 
     res.fold((l) => emit(SignInError(l)), (r) => emit(SignInSuccess(r)));
 
-    print(state);
+    // print(state);
 
     return state;
   }

@@ -1,0 +1,10 @@
+{
+    "[dart]": {
+        "editor.minimap.enabled": true,
+        "editor.fontSize": 12,
+        "workbench.editor.languageDetection": true,
+        "editor.formatOnSave": true
+    },
+    "window.autoDetectColorScheme": true,
+    "search.quickOpen.includeHistory": true
+}
