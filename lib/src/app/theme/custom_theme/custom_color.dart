@@ -13,12 +13,12 @@ class CustomColor {
   final Color color;
   final bool blend;
 
-  Color value(CustomTheme provider) {
-    return provider.custom(this);
+  Color value(CustomTheme theme) {
+    return theme.custom(this);
   }
 }
 
-const linkColor = CustomColor(
-  name: 'Link Color',
-  color: Color(0xFF00B0FF),
-);
+// const linkColor = CustomColor(
+//   name: 'Link Color',
+//   color: Color(0xFF00B0FF),
+// );

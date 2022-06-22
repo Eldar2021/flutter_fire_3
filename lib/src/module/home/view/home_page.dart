@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../src.dart';
+import '../../films/page/view/films_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class HomeView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         controller: controller,
         children: [
-          Container(color: Colors.amberAccent),
+          const FilmsPage(),
           Container(color: Colors.blueGrey),
           Container(color: Colors.red),
           Container(color: Colors.green),

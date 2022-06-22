@@ -17,7 +17,7 @@ Future<void> main() async {
   Hive.init(appDocumentDir.path);
 
   setup();
-  await sl<HiveService>().clear<String>(userUidBox);
+  // await sl<HiveService>().clear<String>(userUidBox);
   final userUid = await sl<HiveService>().read<String>(
     boxName: userUidBox,
     key: userUidKey,
